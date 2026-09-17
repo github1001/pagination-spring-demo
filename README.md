@@ -1,4 +1,4 @@
-![CI](https://github.com/YOUR_USERNAME/pagination-spring-demo/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/github1001/pagination-spring-demo/actions/workflows/ci.yml/badge.svg)
 
 # Pagination Spring Demo
 
@@ -130,4 +130,8 @@ postman/Pagination-Spring-Demo.postman_collection.json
 ```
 
 The collection uses `{{baseUrl}}`, defaulting to `http://localhost:8080`.
+
+## Application Demo
+
+![Application Demo](applicationDemo.gif)
 
