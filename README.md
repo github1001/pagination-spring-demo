@@ -1,3 +1,5 @@
+![CI](https://github.com/YOUR_USERNAME/pagination-spring-demo/actions/workflows/ci.yml/badge.svg)
+
 # Pagination Spring Demo
 
 A small, easy-to-extend example project covering a Spring Boot REST API with pagination, H2, an entity join, request/response logging with Spring AOP (AspectJ annotations), an external HTTP call, unit tests, and a minimal React + TypeScript UI.
@@ -128,3 +130,4 @@ postman/Pagination-Spring-Demo.postman_collection.json
 ```
 
 The collection uses `{{baseUrl}}`, defaulting to `http://localhost:8080`.
+
