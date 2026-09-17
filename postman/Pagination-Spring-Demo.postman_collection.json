@@ -1,0 +1,54 @@
+{
+  "info": {
+    "name": "Pagination Spring Demo",
+    "description": "Spring Boot CRUD, pagination, join query and external API demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:8080" }],
+  "item": [
+    {
+      "name": "Employees",
+      "item": [
+        {
+          "name": "Search employees (pagination)",
+          "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/employees/search?keyword=engineer&department=Engineering&page=0&size=5&sortBy=name&direction=asc", "host": ["{{baseUrl}}"], "path": ["api", "employees", "search"], "query": [
+            {"key":"keyword","value":"engineer"},{"key":"department","value":"Engineering"},{"key":"page","value":"0"},{"key":"size","value":"5"},{"key":"sortBy","value":"name"},{"key":"direction","value":"asc"}
+          ]}}
+        },
+        {
+          "name": "Get employee",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/api/employees/1" }
+        },
+        {
+          "name": "Create employee",
+          "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode":"raw","raw":"{\n  \"name\": \"New Employee\",\n  \"email\": \"new.employee@example.com\",\n  \"title\": \"Software Engineer\",\n  \"departmentId\": 1\n}"}, "url": "{{baseUrl}}/api/employees" }
+        },
+        {
+          "name": "Replace employee (PUT)",
+          "request": { "method": "PUT", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode":"raw","raw":"{\n  \"name\": \"Updated Employee\",\n  \"email\": \"updated.employee@example.com\",\n  \"title\": \"Senior Engineer\",\n  \"departmentId\": 1\n}"}, "url": "{{baseUrl}}/api/employees/1" }
+        },
+        {
+          "name": "Patch employee",
+          "request": { "method": "PATCH", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode":"raw","raw":"{\n  \"title\": \"Principal Engineer\"\n}"}, "url": "{{baseUrl}}/api/employees/1" }
+        },
+        {
+          "name": "Delete employee",
+          "request": { "method": "DELETE", "header": [], "url": "{{baseUrl}}/api/employees/12" }
+        },
+        {
+          "name": "Department summary (join query)",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/api/employees/department-summary" }
+        }
+      ]
+    },
+    {
+      "name": "Integration",
+      "item": [
+        {
+          "name": "Call Google from service",
+          "request": { "method": "GET", "header": [], "url": "{{baseUrl}}/api/integration/google-status" }
+        }
+      ]
+    }
+  ]
+}
